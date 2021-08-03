@@ -23,9 +23,9 @@ public class CustomerController {
         return customersRepository.findAll();
     }
 
-//    @GetMapping(value = "/{customerId}")
-//    public Customer getCustomerById(@PathVariable("customerId") String customerId) {
-//        return customersRepository.findCustomerById(customerId);
-//    }
+    @GetMapping(value = "/{customerId}")
+    public Customer getCustomerById(@PathVariable("customerId") String customerId) {
+        return customersRepository.findCustomerById(customerId);
+    }
 
 }

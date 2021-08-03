@@ -1,11 +1,15 @@
 package com.example.excercisewmongo.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.List;
 
 @Document(collection = "customers")
 public class Customer {
+    @Id
+    public String id;
     public String username;
     public String name;
     public String address;
@@ -68,5 +72,13 @@ public class Customer {
 
     public void setTier_and_details(Object tier_and_details) {
         this.tier_and_details = tier_and_details;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
