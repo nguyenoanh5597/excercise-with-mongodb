@@ -1,18 +1,8 @@
 package com.example.excercisewmongo;
 
-import com.example.excercisewmongo.model.Customer;
-import com.example.excercisewmongo.model.Person;
-import com.example.excercisewmongo.repositories.CustomersRepository;
-import com.example.excercisewmongo.repositories.PersonRepository;
-import com.mongodb.client.MongoCollection;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 @SpringBootApplication

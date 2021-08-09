@@ -1,7 +1,6 @@
 package com.example.excercisewmongo.service;
 
-import com.example.excercisewmongo.model.Customer;
-import org.apache.catalina.User;
+import com.example.excercisewmongo.entity.Customer;
 
 import java.util.List;
 

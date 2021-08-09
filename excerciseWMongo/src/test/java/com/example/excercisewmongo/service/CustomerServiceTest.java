@@ -1,6 +1,6 @@
 package com.example.excercisewmongo.service;
 
-import com.example.excercisewmongo.model.Customer;
+import com.example.excercisewmongo.entity.Customer;
 import com.example.excercisewmongo.repositories.CustomersRepository;
 import org.junit.Assert;
 import org.junit.Test;

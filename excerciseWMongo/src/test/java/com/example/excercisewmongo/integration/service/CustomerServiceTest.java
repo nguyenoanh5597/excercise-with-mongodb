@@ -1,7 +1,7 @@
 package com.example.excercisewmongo.integration.service;
 
 import com.example.excercisewmongo.BaseTests;
-import com.example.excercisewmongo.model.Customer;
+import com.example.excercisewmongo.entity.Customer;
 import com.example.excercisewmongo.repositories.CustomersRepository;
 import com.example.excercisewmongo.service.CustomerService;
 import org.junit.jupiter.api.AfterEach;
