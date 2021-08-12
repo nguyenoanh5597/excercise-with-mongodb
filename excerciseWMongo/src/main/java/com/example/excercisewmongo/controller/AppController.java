@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AppController {
 
     @GetMapping("/")
-    public String index() {
+    public String home() {
         return "HALO!";
     }
 
@@ -17,10 +17,5 @@ public class AppController {
     public String sayHi(@RequestBody String body) {
         return body;
     }
-
-//    @GetMapping(value = "/customer")
-//    public List<Customer> getAllCustomers() {
-//        return customersRepository.findAll();
-//    }
 
 }

@@ -15,10 +15,8 @@ import java.util.List;
 @RunWith(MockitoJUnitRunner.class)
 public class CustomerServiceTest {
 
-
     @Mock
     private CustomersRepository repository;
-
 
     @Test
     public void test() {
