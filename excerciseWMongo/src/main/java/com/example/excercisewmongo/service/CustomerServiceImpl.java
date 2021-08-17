@@ -24,13 +24,11 @@ public class CustomerServiceImpl implements CustomerService {
         try {
             List<Customer> customers = customersRepository.findAll();
             List<Customer> result = new ArrayList<>();
-
             for (Customer customer : customers) {
                 if (Objects.nonNull(customer) && Objects.nonNull(customer.getName()) && customer.getName().equals(name)) {
                     result.add(customer);
                 }
             }
-
             return result;
         } catch (Exception e) {
             return new ArrayList<>();
@@ -41,6 +39,24 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer updateNameByUser(String username, String name) {
         Customer c = customersRepository.findByUsername(username);
         c.setName(name);
-        return customersRepository.save(c);
+        customersRepository.save(c);
+        return c;
     }
+
+    @Override
+    public Customer updateCustomer(String id, Customer customer) {
+        Customer c = customersRepository.findCustomerById(id);
+        c.setName(customer.getName());
+        c.setUsername(customer.getUsername());
+        customersRepository.save(c);
+        return c;
+    }
+
+    @Override
+    public String deleteCustomer(String id) {
+        Customer c = customersRepository.findCustomerById(id);
+        customersRepository.delete(c);
+        return "delete success";
+    }
+
 }
