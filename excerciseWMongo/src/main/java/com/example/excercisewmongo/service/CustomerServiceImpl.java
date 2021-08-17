@@ -2,16 +2,12 @@ package com.example.excercisewmongo.service;
 
 import com.example.excercisewmongo.entity.Customer;
 import com.example.excercisewmongo.repositories.CustomersRepository;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.security.*;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @Component
 public class CustomerServiceImpl implements CustomerService {
@@ -62,22 +58,5 @@ public class CustomerServiceImpl implements CustomerService {
         customersRepository.delete(c);
         return "delete success";
     }
-
-    @Override
-    public String createJWT(String username) {
-        Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
-        Map<String, Object> claims = new HashMap<String, Object>();
-        claims.put("username", username);
-
-        String token = Jwts.builder()
-                .setHeaderParam("alg", "RS256")
-                .setHeaderParam("typ", "JWT")
-                .setClaims(claims)
-                .signWith(key)
-                .compact();
-        return token;
-    }
-
-
 
 }

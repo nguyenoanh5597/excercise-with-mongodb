@@ -6,11 +6,7 @@ import com.example.excercisewmongo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.UnrecoverableKeyException;
 import java.util.List;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("customer")
@@ -52,11 +48,6 @@ public class CustomerController {
     public String deleteAllCustomers() {
         customersRepository.deleteAll();
         return "Delete all success";
-    }
-
-    @PostMapping("/login")
-    public String login(@RequestBody String username){
-        return customerService.createJWT(username);
     }
 
 }
